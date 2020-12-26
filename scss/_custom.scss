@@ -1,0 +1,257 @@
+
+html{
+    @include box-sizing(border-box)
+}
+
+*,
+*:after,
+*:before{
+    @include box-sizing('inherit');
+}
+
+body{
+    font-family: $fuente_principal;
+}
+
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.oculto{
+    display: none;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .logo{
+
+        padding: 1.4rem  0 ;
+
+    }
+}
+
+.carrito-compras{
+    cursor: pointer;
+    position: relative;
+
+    &:hover .contenido{
+        background-color: $gris;
+        display: block;
+        max-width: 400px;
+        padding: 1rem;
+        position: absolute;
+        right: 0px;
+
+    }
+    .img{
+        max-width: 150px;
+    }
+
+    .boton{
+        @include boton($principal);
+    }
+}
+
+
+.hero{
+    align-items: center;
+    background-size: cover;
+    color: $gris;
+    display: flex;
+    min-height: 24rem;
+
+    @include background-image('../img/hero.jpg');
+
+    .contenido-hero{
+        flex: 1;
+
+        h2{
+            font-weight: 400;
+            font-size: 2.4rem;
+        }
+
+        p{
+            font-size: 1.2rem;
+        }
+
+        form{
+            position: relative;
+
+            @include  tablet(){
+                width: 40%;
+            }
+
+            input[type="submit"]{
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                display: block;
+                height: 2rem;
+                margin-top: 10px;
+                position: absolute;
+                right: 0;
+                text-indent: -9999px;
+                top: 0;
+                @include background-image('../img/lupa.png');
+                width: 3rem;
+
+            }
+            input[type="text"]{
+                height: 3rem;
+                border-radius: 5px;
+                outline:none !important;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.barra{
+    color: black;
+    min-height: 5rem;
+    padding: 1rem;
+    display:flex;
+    align-items: center;
+
+    @include gradiente($secundario, $terciario);
+
+
+    .iconos{
+        display: flex;
+        flex-direction: column; 
+        flex: 1;
+        text-align: center;
+
+        @include desktop(){
+            flex-direction: row;
+        }
+
+        .icono{
+            flex: 1;
+            background-position: 5% center !important;
+            background-size: 2.5rem;
+            @include tablet(){
+                background-position: 20% center !important;
+            }
+            @include desktop(){
+                background-position: left center !important;
+            }
+
+            &.icono1{
+                @include background-image('../img/icono1.png');
+            }
+            &.icono2{
+                @include background-image('../img/icono2.png');
+            }
+            &.icono3{
+                @include background-image('../img/icono3.png');
+            }
+        }
+    }
+}
+
+
+.cursos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .curso{
+        .imagen-curso{
+            width: 100%;
+        }
+        flex:100%;
+        border:1px solid darken($gris, 10);
+        margin-bottom: 1rem;
+
+        @include tablet(){
+            flex: 0 1 calc(33% - 1rem);
+        }
+
+        @include desktop(){
+            flex: 0 1 calc(25% - 1rem);
+        }
+        
+
+    }
+}
+
+.info-curso{
+    padding: 1rem; 
+
+    h4{
+        margin: 0;
+        font-size: 1.2rem;
+
+    }
+
+    .precio{
+        display: flex;
+        justify-content: space-between;
+
+        .regular{
+        text-decoration: line-through;
+        color: red;
+        }
+
+        .oferta{
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: rgb(49, 210, 49);
+        }
+
+    }
+    .boton{
+        @include boton($terciario);
+    }
+}
+
+.footer{
+    
+    border-top: 1px solid darken($gris, 10);
+    padding-top: 2rem;
+    margin-top: 1rem;
+
+    .contenedor-footer{
+        display: flex;
+        flex-direction: column;
+
+        @include telefono(){
+            flex-direction: row;
+        }
+    }
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    flex: 1;
+    @include desktop(){
+        flex: 0 1 calc(30% - 1rem);
+    }
+
+    a{
+        color: $negro;
+        text-decoration: none;
+        margin-bottom: .5rem;
+        
+    }
+}
+
+.navegacion{
+    @extend .menu;
+    
+    a{
+        color: $principal;
+    }
+}
