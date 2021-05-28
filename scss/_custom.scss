@@ -180,43 +180,43 @@ body{
         @include desktop(){
             flex: 0 1 calc(25% - 1rem);
         }
-        
-
     }
 }
-
-.info-curso{
-    padding: 1rem; 
-
-    h4{
-        margin: 0;
-        font-size: 1.2rem;
-
+.info-curso {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    img {
+        max-width: 120px;
     }
-
-    .precio{
+    p{
+        margin-top: 4rem;
+    }
+    h4 {
+        margin: 0;
+        font-size: 1.4rem;
+        height: 4rem;
+    }
+    .precio {
         display: flex;
         justify-content: space-between;
-
-        .regular{
+    .regular {
         text-decoration: line-through;
         color: red;
-        }
-
-        .oferta{
+    }
+    .oferta {
         font-size: 1.6rem;
         font-weight: 700;
-        color: rgb(49, 210, 49);
-        }
-
+        color: green;
     }
-    .boton{
-        @include boton($terciario);
+    }
+    .boton {
+        @include boton($secundario);
     }
 }
 
 .footer{
-    
+
     border-top: 1px solid darken($gris, 10);
     padding-top: 2rem;
     margin-top: 1rem;
