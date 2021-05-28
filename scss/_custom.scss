@@ -56,7 +56,7 @@ body{
     }
 
     .boton{
-        @include boton($principal);
+        @include boton($terciario);
     }
 }
 
